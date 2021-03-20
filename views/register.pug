@@ -1,0 +1,29 @@
+doctype
+html 
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+    title SignUp
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css", rel="stylesheet")
+  body
+    .container
+      h2 REGISTER HERE
+      form.justify-content-center(action, method="POST")
+        div
+          .form-group.col-lg-5
+            label(for="username")
+            input.form-control#username(type="username", aria-describedby="usernameHelp", placeholder="Enter your name")
+            small#usernameHelp.form-text.text-muted
+          .form-group.col-lg-5
+            label(for="email")
+            input.form-control#email(type="email", aria-describedby="emailHelp", placeholder="Enter Your Email")
+            small#emailHelp.form-text.text-muted
+          .form-group.col-lg-5
+            label(for="exampleInputPassword1")
+            input.form-control#exampleInputPassword1(type="password", placeholder="Create Password")
+          .form-group.col-lg-5
+            label(for="confirmPassword")
+            input.form-control#confirmPassword(type="password", placeholder="Confirm Password")
+          br
+          button.btn.btn-primary(type="submit") Submit
