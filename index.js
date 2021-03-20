@@ -1,2 +1,7 @@
 const express = require('express');
-const app = express(); //instantiating 
+//instantiating express
+const app = express(); 
+
+app.listen(3000, ()=>{
+    console.log()
+})
