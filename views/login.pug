@@ -1,0 +1,13 @@
+extends layout 
+block content
+      .container
+        h2 LOG IN
+        form
+          .form-group
+            label(for="exampleInputEmail1") Email address
+            input.form-control#exampleInputEmail1(type="email", aria-describedby="emailHelp", placeholder="Enter email")
+            small#emailHelp.form-text.text-muted
+          .form-group
+            label(for="exampleInputPassword1") Password
+            input.form-control#exampleInputPassword1(type="password", placeholder="Password")
+          button.btn.btn-primary(type="submit") Log In
