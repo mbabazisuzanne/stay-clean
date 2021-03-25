@@ -6,30 +6,30 @@ block content
         .form-row
         .col-md-4.mb-3
             label(for="validationCustom01") Name
-            input.form-control#validationCustom01(type="text", placeholder="Name")
+            input.form-control#validationCustom01(type="text", placeholder="Name" name="username")
         .col-md-4.mb-3
             label(for="validationCustom02") Gender
             select#gender(name="gender")
-            option(value="volvo") Female
-            option(value="saab") Male
+            option(value="female") Female
+            option(value="male") Male
         .form-row
         .col-md-6.mb-3
             label(for="validationCustom03") Date of birth
-            input.form-control#validationCustom03(type="date", placeholder="D.o.B")
+            input.form-control#validationCustom03(type="date", placeholder="D.o.B" name="DoB")
         .col-md-3.mb-3
             label(for="validationCustom04") National Identification Number
-            input.form-control#validationCustom04(type="text", placeholder="NIN")
+            input.form-control#validationCustom04(type="text", placeholder="NIN" name="nin")
         .col-md-3.mb-3
             label(for="validationCustom05") Residence
-            input.form-control#validationCustom05(type="text", placeholder="Residence")
+            input.form-control#validationCustom05(type="text", placeholder="Residence" name="residence")
         .col-md-3.mb-3
             label(for="validationCustom05") Driving License Number
-            input.form-control#validationCustom05(type="text", placeholder="License Number")
+            input.form-control#validationCustom05(type="text", placeholder="License Number" name="license")
         .col-md-3.mb-3
             label(for="validationCustom05") Past Incidences
             select#incidences(name="incidences")
-            option(value="volvo") Accidents
-            option(value="saab") Fights
-            option(value="mercedes") Fuel thefts
+            option(value="accidents") Accidents
+            option(value="figths") Fights
+            option(value="fuel thefts") Fuel thefts
         input#myFile(type="file", name="filename")
     button.btn.btn-primary(type="submit") Submit form
