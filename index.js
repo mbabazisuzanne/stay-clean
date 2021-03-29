@@ -15,7 +15,9 @@ const app = express();
 //database connection
 mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
   });
   
   mongoose.connection
@@ -27,7 +29,7 @@ mongoose.connect(process.env.DATABASE, {
     });
 
 //middleware    
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({extended: false}))
 
 app.set('view engine', 'pug');
 app.set('views', './views');

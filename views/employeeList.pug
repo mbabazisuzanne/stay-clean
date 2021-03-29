@@ -1,28 +1,40 @@
 extends layout
 block content
     header.card-header
-        h4.card-title Welcome 
+        h4.card-title Employee List
     div.form-row
         div.col.form-group
-            a(href='/employee/createEmployee')  Add New Employee
+            a(href='/employee/addEmployee')  Add New Employee
         div.pull-right
         a(href='/order')  View Order List
     table.table
         thead.thead-dark
             tr
                 th Full Name 
-                th NIN
                 th Gender
-                th Past incidences
-                th Role
-                th
+                th Date of birth
+                th NIN
+                th Residence
+                th License Number
+                th Past Incidences 
+                th Image
+                th 
                 th
         tbody
             if users.length
             each user in users
                 tr
-                    td #{user.lastname +' '+ user.firstname}
-                    td #{user.nin}
+                    td #{user.username}
                     td #{user.gender}
-                    td #{user.pastincidence}
-                    td #{user.role}
+                    td #{user.DoB}
+                    td #{user.nin}
+                    td #{user.residence}
+                    td #{user.license}
+                    td #{user.incidences}
+                    td #{user.imageupload}
+                    td 
+                        a(href='/addEmployees/update/'+user._id) Update
+                    td
+                        form(method="post" action='/employee/delete')
+                            input(type="hidden", placeholder="", name="id", value=user._id)
+                            button.btn.btn-dark.btn-block(type="submit") Delete

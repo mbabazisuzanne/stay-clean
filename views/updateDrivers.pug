@@ -1,0 +1,34 @@
+extends layout
+block content
+    header.card-header
+        h4.card-title Welcome
+    div.form-row
+        div.col.form-group.col-md-12   
+            div.form-row
+                div.col-md-10
+                    p Here is your information #{user.firstname}
+    div.form-row
+        img(src='/'+user.imageupload width="150px" height="170px")
+    form(method="post" action="/employee/update?id="+user._id)
+        table.table
+            thead.thead-dark
+                tr
+                    th Full Name
+                    td 
+                        input.form-control(value = user.username name ="username")
+               
+                tr
+                    th Gender
+                        td 
+                            label(for="validationCustom02") Gender
+                            select#gender(name="gender")
+                                option(value="female" selected=user.gender==="female") Female
+                                option(value="male" selected=user.gender==="male") Male
+                tr
+                    th Gender
+                        td 
+                            input.form-control(value = user.gender name="gender")
+                tr
+                    th Date of birth
+                        td 
+                            input.form-control(value = user.DoB name ="DoB")

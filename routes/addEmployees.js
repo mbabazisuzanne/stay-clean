@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const employee = require('../models/employee')
+const Employee = require('../models/employee')
 var multer = require('multer');
 var upload = multer({dest:'uploads/'});
 
@@ -10,9 +10,9 @@ router.get('/addEmployees', (req,res) => {
 })
 
 //gets employee list
-router.get('/', async (req, res) => { 
+router.get('/employeeList', async (req, res) => { 
     try{
-        //find all data in database 
+//find all data in database 
         const employeeDetails = await Employee.find();
         res.render('employeeList', {users:employeeDetails, title: 'EmployeeList'});
        
@@ -21,15 +21,18 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.post('/addEmployees', upload.single('imageupload'), (req, res) => {
+router.post('/employeeList', upload.single('imageupload'), async (req, res) => {
     try {
-        console.log(req.body)
-        // res.send(req.file);
+        const employee = new Employee(req.body)
+        employee.imageupload = req.file.path;
+        await employee.save()
+        res.redirect('/addEmployees/employeeList')
     } catch (err) {
-        res.send(400);
-        console.log("failed")
+        res.send('Sorry, something went wrong.');
+        console.log(err)
     }
 })
+
 //image upload
 var storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -41,31 +44,23 @@ var storage = multer.diskStorage({
 });
 var upload = multer({ storage: storage })
 
-// router.post('/addEmployees', upload.single('imageupload'), (req, res) => {
-//     const employee = new Employee(req.body);
-//     employee.imageupload = req.file.path;
-//     employee.save()
-//     .then(() => { res.send('Registered successfully!')})
-//     .catch((err) => {
-//         console.log(err);
-//         res.send('Sorry! Something went wrong.');
-//     })
-// })
-router.post('/addEmployees', upload.single('imageupload'), async (req, res) => {
-try{
-    console.log(req.body);
-    const employee = new Employee(req.body);
-  
-employee.imageupload = req.file.path;
-    //await code performing database operation 
-    await employee.save()
-    
-    res.redirect('/employee')
-} catch(err){
-
-    console.log(err);
-    res.send('Sorry! Something went wrong.');
-}
-
+router.get('/update/:id', async (req, res) => {
+    try {
+        const updateEmp = await Employee.findOne({ _id: req.params.id })
+        res.render('updateDrivers', { user: updateEmp })
+    } catch (err) {
+        res.status(400).send("Unable to find item in the database");
+    }
 })
+
+router.post('/update', async (req, res) => {
+    try {
+        await Employee.findOneAndUpdate({_id:req.query.id}, req.body)
+        res.redirect('/addEmployees/employeeList');
+    } catch (err) {
+        console.log(err)
+        res.status(404).send("Unable to update item in the database");
+    }
+})
+
 module.exports = router;

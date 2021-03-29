@@ -2,7 +2,7 @@ extends layout
 block content
     .container
     h2 Create Employee
-    form.needs-validation(novalidate)
+    form.needs-validation(action="/addEmployees/employeeList" method="POST" enctype="multipart/form-data")
         .form-row
         .col-md-4.mb-3
             label(for="validationCustom01") Name
@@ -10,8 +10,8 @@ block content
         .col-md-4.mb-3
             label(for="validationCustom02") Gender
             select#gender(name="gender")
-            option(value="female") Female
-            option(value="male") Male
+                option(value="female") Female
+                option(value="male") Male
         .form-row
         .col-md-6.mb-3
             label(for="validationCustom03") Date of birth
@@ -28,8 +28,8 @@ block content
         .col-md-3.mb-3
             label(for="validationCustom05") Past Incidences
             select#incidences(name="incidences")
-            option(value="accidents") Accidents
-            option(value="figths") Fights
-            option(value="fuel thefts") Fuel thefts
-        input#myFile(type="file", name="filename")
-    button.btn.btn-primary(type="submit") Submit form
+                option(value="accidents") Accidents
+                option(value="figths") Fights
+                option(value="fuel thefts") Fuel thefts
+        input#myFile(type="file", name="imageupload")
+        button.btn.btn-primary(type="submit") Submit form

@@ -4,17 +4,17 @@ const mongoose = require('mongoose');
 //create a schema for the data you need to save
 const employeeSchema = new mongoose.Schema({ 
     username: {
-        type: String,
-        required: 'Please enter your name'
+        type: String
+        // required: 'Please enter your name'
     },
     gender: String,
     DoB:{
-        type: Date,
+        type: String,
     },
     nin: {
         type: String,
-        unique: true,
-        required: 'Please enter your  NIN'
+        unique: true
+        // required: 'Please enter your  NIN'
     },
     residence: {
         type: String,
@@ -22,7 +22,7 @@ const employeeSchema = new mongoose.Schema({
     license: {
         type: String,
         unique: true,
-        required: 'Please enter your license number'
+        // required: 'Please enter your license number'
     },
     incidences:[{
         type: String
@@ -33,4 +33,4 @@ const employeeSchema = new mongoose.Schema({
 })
 
 //export the mongoose model
-module.exports = mongoose.model('employee', employeeSchema);
+module.exports = mongoose.model('Employee', employeeSchema);
