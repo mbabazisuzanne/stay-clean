@@ -1,13 +1,21 @@
 //Dependencies
 const express = require('express');
 const mongoose = require('mongoose');
+const passport = require('passport');
 const dotenv = require('dotenv');
 dotenv.config();
 
+//require express session
+const expressSession = require('express-session')({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false
+});
 
 const registrationRoutes = require('./routes/registrationRoutes'); 
 const loginRoutes = require('./routes/loginRoutes');
 const addEmployees = require('./routes/addEmployees');
+const Login = require('./models/Login');
 
 //instantiating express
 const app = express(); 
@@ -29,8 +37,17 @@ mongoose.connect(process.env.DATABASE, {
     });
 
 //middleware    
-app.use(express.urlencoded({extended: false}))
+//app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({extended: true}))
+app.use(expressSession);
+app.use(passport.initialize());
+app.use(passport.session());
 
+passport.use(Login.createStrategy());
+passport.serializeUser(Login.serializeUser());
+passport.deserializeUser(Login.deserializeUser());
+
+//configurations
 app.set('view engine', 'pug');
 app.set('views', './views');
 
@@ -40,14 +57,18 @@ app.set('views', './views');
 //   });
 //middleware for serving static files 
 app.use(express.static('public'));
+app.use('/public/images', express.static(__dirname + '/public/images'));
 
 //Routes
 app.use('/register',registrationRoutes); 
 app.use('/login',loginRoutes);
 app.use('/addEmployees',addEmployees);
 
-// app.get('/register',(req,res)=>{res.render('register')});
-// app.get('/login',(req,res)=>{res.render('login')});
+// cater for undefined routes
+app.get('*', (req, res)=> {
+  res.send('The route specified doesnt exist')
+})
+
 app.listen(3000, ()=>{
     console.log('Listening on port 3000');
 })

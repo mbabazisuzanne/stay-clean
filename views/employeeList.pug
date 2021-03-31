@@ -7,6 +7,14 @@ block content
             a(href='/employee/addEmployee')  Add New Employee
         div.pull-right
         a(href='/order')  View Order List
+    div.form-row
+        div.col.form-group.col-md-12   
+            form.search(action='/employee')
+                div.form-row
+                    div.col-md-8
+                        input.form-control(name='role' placeholder="Enter your search term(role) ...")
+                    div.col-md-4
+                        input.btn.btn-dark.btn-block(type="Submit")
     table.table
         thead.thead-dark
             tr
@@ -38,3 +46,6 @@ block content
                         form(method="post" action='/employee/delete')
                             input(type="hidden", placeholder="", name="id", value=user._id)
                             button.btn.btn-dark.btn-block(type="submit") Delete
+    div.form-row
+        div.pull-right
+            a(class='button', href='/') Home

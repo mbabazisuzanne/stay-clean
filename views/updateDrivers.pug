@@ -25,10 +25,30 @@ block content
                                 option(value="female" selected=user.gender==="female") Female
                                 option(value="male" selected=user.gender==="male") Male
                 tr
-                    th Gender
-                        td 
-                            input.form-control(value = user.gender name="gender")
-                tr
                     th Date of birth
                         td 
                             input.form-control(value = user.DoB name ="DoB")
+                tr 
+                    th NIN
+                        td 
+                        input.form-control(value = user.nin name ="nin")
+                tr 
+                    th Residence 
+                        td 
+                        input.form-control(value = user.residence name="residence")
+                tr  
+                    th License Number 
+                        td 
+                        input.form-control(value = user.nin name ="license")
+                tr
+                    th Past incidences
+                    td 
+                        label accidents&nbsp 
+                        input(value= "accidents" type="checkbox" checked =user.past incidence('accidents') name="pastincidence")
+                        label &nbspfights&nbsp
+                        input(value= "fights" type="checkbox" checked =user.past incidence('fights') name="pastincidence")
+                        label &nbspfuel thefts&nbsp
+                        input(value= "fuel thefts" type="checkbox" checked =user.past incidence('fuel thefts') name="pastincidence")
+                tr
+                    td(colspan=2)
+                        button.btn.btn-dark.btn-block(type="submit") Update
