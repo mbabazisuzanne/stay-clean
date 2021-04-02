@@ -9,6 +9,5 @@ const loginSchema = new mongoose.Schema({
     }
   });
 
-loginSchema.plugin(passportLocalMongoose);
-// registerSchema.plugin(passportLocalMongoose, { usernameField: 'email' })
+loginSchema.plugin(passportLocalMongoose, { usernameField: 'email' })
 module.exports = mongoose.model('Login', loginSchema);
