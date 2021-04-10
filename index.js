@@ -15,6 +15,7 @@ const expressSession = require('express-session')({
 const registrationRoutes = require('./routes/registrationRoutes'); 
 const loginRoutes = require('./routes/loginRoutes');
 const addEmployees = require('./routes/addEmployees');
+const customerRequests = require('./routes/customerRequests');
 const Login = require('./models/Login');
 
 //instantiating express
@@ -43,6 +44,7 @@ app.use(expressSession);
 app.use(passport.initialize());
 app.use(passport.session());
 
+//passport configurations
 passport.use(Login.createStrategy());
 passport.serializeUser(Login.serializeUser());
 passport.deserializeUser(Login.deserializeUser());
@@ -63,6 +65,7 @@ app.use('/public/images', express.static(__dirname + '/public/images'));
 app.use('/register',registrationRoutes); 
 app.use('/login',loginRoutes);
 app.use('/addEmployees',addEmployees);
+app.use('/requests',customerRequests);
 
 // cater for undefined routes
 app.get('*', (req, res)=> {
