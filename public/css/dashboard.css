@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  padding: 2em 1em;
+}
+
+.container .headingtitle {
+  margin: 0 2em;
+}
+
+.container .headingtitle span {
+  color: #9299c3;
+}
+
+.container .statistics {
+  padding: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .statistics .card {
+  position: relative;
+  background: #4f5478;
+  color: lightsteelblue;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-radius: 10px;
+  padding: 2em;
+  margin: 0 2em;
+  -webkit-box-shadow: 4px 0px 4px #989ca02d;
+          box-shadow: 4px 0px 4px #989ca02d;
+}
+
+.container .statistics .card .blob {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.container .statistics .card .blod {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.container .statistics .card .number {
+  color: white;
+  font-size: 2rem;
+}
+
+.container .statistics .card img {
+  width: 25px;
+  height: 25px;
+}
+
+.heading {
+  background: #35395b;
+  color: white;
+  padding: 2em 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.heading .logo p {
+  font-size: 25px;
+}
+
+.heading .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.heading .links a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  margin: 0 1em;
+}
+
+.heading .links a img {
+  width: 20px;
+  height: 20px;
+  margin: 0 0.3em;
+}
+
+.heading .settings a {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.heading .settings a img {
+  width: 25px;
+  height: 25px;
+  margin: 0 0.3em;
+}
+/*# sourceMappingURL=dashboard.css.map */

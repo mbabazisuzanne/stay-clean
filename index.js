@@ -15,8 +15,10 @@ const expressSession = require('express-session')({
 const registrationRoutes = require('./routes/registrationRoutes'); 
 const loginRoutes = require('./routes/loginRoutes');
 const addEmployees = require('./routes/addEmployees');
-const customerRequests = require('./routes/customerRequests');
+
+const requests = require('./routes/requests');
 const Login = require('./models/Login');
+
 
 //instantiating express
 const app = express(); 
@@ -65,7 +67,7 @@ app.use('/public/images', express.static(__dirname + '/public/images'));
 app.use('/register',registrationRoutes); 
 app.use('/login',loginRoutes);
 app.use('/addEmployees',addEmployees);
-app.use('/requests',customerRequests);
+app.use('/requests',requests);
 
 // cater for undefined routes
 app.get('*', (req, res)=> {

@@ -1,39 +1,56 @@
 extends layout 
 block content
-    .container
+    div.container
     h2 Create Employee
     form.needs-validation(action="/addEmployees/employeeList" method="POST" enctype="multipart/form-data")
-        .form-row
-        .col-md-4.mb-4
-            label(for="validationCustom01") Name
-            input.form-control#validationCustom01(type="text", placeholder="Name" name="username")
-        .col-md-4.mb-3
-            label(for="validationCustom02") Gender
-            select#gender(name="gender")
-                option(value="female") Female
-                option(value="male") Male
-        .form-row
-        .col-md-6.mb-3
-            label(for="validationCustom03") Date of birth
-            input.form-control#validationCustom03(type="date", placeholder="D.o.B" name="DoB")
-        .col-md-3.mb-3
-            label(for="validationCustom04") National Identification Number
-            input.form-control#validationCustom04(type="text", placeholder="NIN" name="nin")
-        .col-md-3.mb-3
-            label(for="validationCustom05") Residence
-            input.form-control#validationCustom05(type="text", placeholder="Residence" name="residence")
-        .col-md-3.mb-3
-            label(for="validationCustom05") Driving License Number
-            input.form-control#validationCustom05(type="text", placeholder="License Number" name="license")
-        .col-md-3.mb-3
-            label(for="validationCustom05") Past Incidences
-            select#incidences(name="incidences")
-                option(value="accidents") Accidents
-                option(value="figths") Fights
-                option(value="fuel thefts") Fuel thefts
-        input#myFile(type="file", name="imageupload")
-        button.btn.btn-primary(type="submit") Submit form
         div.form-row
+            div.col.form-group
+                label(for="validationCustom01") Name
+                input.form-control#validationCustom01(type="text", placeholder="Name" name="username")
+          
+            div.form-row
+                label(for="validationCustom03") Date of birth
+                input.form-control#validationCustom03(type="date", placeholder="D.o.B" name="DoB")
+            .mb-3
+                    label.form-label(for="form-select") Gender
+                    select#form-select.form-select
+                        option Male
+                        option Female
+            div.form-row
+                label(for="validationCustom04") National Identification Number
+                input.form-control#validationCustom04(type="text", placeholder="NIN" name="nin")
+            div.form-row
+                label(for="validationCustom05") Residence
+                input.form-control#validationCustom05(type="text", placeholder="Residence" name="residence")
+            div.form-row
+                label Role 
+                select.form-control(name="role")
+                    option(value="driver")  Driver
+                    option(value="conductor") Conductor
+            div.form-row
+                label(for="validationCustom05") Driving License Number
+                input.form-control#validationCustom05(type="text", placeholder="License Number" name="license")
+            div.col.form-group
+                label(for="validationCustom05") Past Incidences
+            .form-check
+                input#defaultCheck1.form-check-input(type='checkbox' value='')
+                label.form-check-label(for='defaultCheck1')
+                  | Accidents
+            .form-check
+                input#defaultCheck2.form-check-input(type='checkbox' value='')
+                label.form-check-label(for='defaultCheck2')
+                  | Fuel thefts
+            .form-check
+                input#defaultCheck2.form-check-input(type='checkbox' value='')
+                label.form-check-label(for='defaultCheck2')
+                  | Fights     
+            div.form-row
+                div.col.form-group
+                    label Upload image
+                    input(type='file' name='imageupload')
+            
+            button.btn.btn-primary(type="submit") Submit form
+            div.form-row
                             div.col.form-group
                                 a(href='/') Employee List
                             div.pull-right

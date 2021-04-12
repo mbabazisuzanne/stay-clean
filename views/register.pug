@@ -4,18 +4,16 @@ block content
     .container
       h2 REGISTER HERE
       form.justify-content-center(action, method="POST")
-        div
+        div.form-row
           .form-group.col-lg-5
-            label(for="username")
-            input.form-control#username(type="username", aria-describedby="usernameHelp", placeholder="Enter your name")
-            small#usernameHelp.form-text.text-muted
+            label Name
+            input.form-control#username(type="username", aria-describedby="usernameHelp", placeholder="Enter your name" name="username" )
           .form-group.col-lg-5
-            label(for="email")
-            input.form-control#email(type="email", aria-describedby="emailHelp", placeholder="Enter Your Email")
-            small#emailHelp.form-text.text-muted
+            label(for="email") Email Address
+            input.form-control#email(type="email", aria-describedby="emailHelp", placeholder="Enter Your Email" name="email")
           .form-group.col-lg-5
-            label(for="exampleInputPassword1")
-            input.form-control#exampleInputPassword1(type="password", placeholder="Create Password")
+            label(for="exampleInputPassword1") Create Password
+            input.form-control#exampleInputPassword1(type="password", placeholder="Create Password" )
           .form-group.col-lg-5
             label(for="confirmPassword")
             input.form-control#confirmPassword(type="password", placeholder="Confirm Password")
