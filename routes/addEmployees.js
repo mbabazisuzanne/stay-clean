@@ -63,4 +63,15 @@ router.post('/update', async (req, res) => {
     }
 })
 
+router.post('/delete', async (req, res) => {
+    try {
+        await Employee.findOneAndDelete({_id:req.query.id}, req.body)
+        res.redirect('/addEmployees/employeeList');
+    } catch (err) {
+        console.log(err)
+        res.status(404).send("Unable to delete item from the database");
+    }
+})
+
+
 module.exports = router;
