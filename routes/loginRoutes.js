@@ -9,7 +9,7 @@ router.get('/login', (req,res) => {
 // checks username and password using passport
 router.post('/', passport.authenticate('local', {failureRedirect: '/login'}), (req,res) =>{
     req.session.user = req.user;
-    res.redirect('/employee');
+    res.redirect('/dashboard');
 });
 
 

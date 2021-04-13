@@ -1,60 +1,58 @@
-meta(charset="UTF-8")
-meta(http-equiv="X-UA-Compatible", content="IE=edge")
-meta(name="viewport", content="width=device-width,initial-scale=1")
-link(rel="stylesheet", href="/public/css/dashboard.css")
-title Dashboard
-  .heading
-    .logo
-      p StayClean
-    .links
-      a(href="#")
-        img.icon(src="/public/images/icons/addicon.svg", alt="New Employee")
-  
-    NEW EMPLOYEE
-      a(href="#")
-        img.icon(src="/public/images/icons/orders.svg", alt="Orders")
-        | 
-    ORDERS
-      a(href="#")
-        img.icon(src="/public/images/icons/customer.svg", alt="Customers")
-        | 
-    CUSTOMERS
-      a(href="#")
-        img.icon(src="/public/images/icons/payment.svg", alt="Payments")
-        | 
-    PAYMENTS
-      .settings
+doctype html 
+html 
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+    link(rel="stylesheet", href="/css/dashboard.css")
+    title Dashboard
+  body
+    .heading
+      .logo
+        p StayClean
+      .links
         a(href="#")
-          img(src="/public/images/icons/addicon.svg", alt="Admin")
-        | 
-    Admin
-      .container
-        .headingtitle
-      p
-        | Statistics 
-        span / Summary
-    .statistics
-      .card
-        img(src="/public/images/icons/orders.svg", alt)
-        p Orders
-        p.number 58
-        img.blob(src="/public/images/icons/blod2.svg", alt)
-        img.blob.blod(src="/images/icons/blob.svg", alt)
-      .card
-        img(src="/public/images/icons/orders.svg", alt)
-        p Subscriptions
-        p.number 12
-        img.blob(src="/public/images/icons/blod2.svg", alt)
-        img.blob.blod(src="/public/images/icons/blob.svg", alt)
-      .card
-        img(src="/public/images/icons/orders.svg", alt)
-        p Payments
-        p.number
-          | 103,000 
-          span ugx
-      .card
-        img(src="/public/images/icons/orders.svg", alt)
-        p Trucks
-        p.number 8
-        img.blob(src="/public/images/icons/blod2.svg", alt)
-        img.blob.blod(src="/public/images/icons/blob.svg", alt)
+          img.icon(src="/images/icons/addicon.svg", alt="New Employee")
+        | NEW EMPLOYEE
+        a(href="#")
+          img.icon(src="/images/icons/orders.svg", alt="Orders")
+        | ORDERS
+        a(href="#")
+          img.icon(src="/images/icons/customer.svg", alt="Customers")
+        | CUSTOMERS
+        a(href="#")
+          img.icon(src="/images/icons/payment.svg", alt="Payments")
+        | PAYMENTS
+        .settings
+          a(href="#")
+            img(src="/images/icons/addicon.svg", alt="Admin")
+        | Admin
+        .container
+          .headingtitle
+        p| Statistics 
+          span / Summary
+        .statistics
+        .card
+          img(src="/images/icons/orders.svg", alt)
+          p Orders
+          p.number 58
+          img.blob(src="/images/icons/blod2.svg", alt)
+          img.blob.blod(src="/icons/blob.svg", alt)
+        .card
+          img(src="/images/icons/orders.svg", alt)
+          p Subscriptions
+          p.number 12
+          img.blob(src="/images/icons/blod2.svg", alt)
+          img.blob.blod(src="/images/icons/blob.svg", alt)
+        .card
+          img(src="/images/icons/orders.svg", alt)
+          p Payments
+          p.number
+            | 103,000 
+            span ugx
+        .card
+          img(src="/images/icons/orders.svg", alt)
+          p Trucks
+          p.number 8
+          img.blob(src="/images/icons/blod2.svg", alt)
+          img.blob.blod(src="/images/icons/blob.svg", alt)

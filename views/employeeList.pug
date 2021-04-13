@@ -7,6 +7,9 @@ block content
             a(href='/employee/addEmployee')  Add New Employee
         div.pull-right
         a(href='/order')  View Order List
+        div.form-row
+        div.pull-right
+            a(class='button', href='/') Home
     div.form-row
         div.col.form-group.col-md-12   
             form.search(action='/employee')
@@ -19,24 +22,24 @@ block content
         thead.thead-dark
             tr
                 th Full Name 
-                th Gender
                 th Date of birth
+                th Gender
                 th NIN
                 th Residence
+                th Role
                 th License Number
                 th Past Incidences 
-                th Image
-                th 
-                th
+            
         tbody
             if users.length
             each user in users
                 tr
                     td #{user.username}
-                    td #{user.gender}
                     td #{user.DoB}
+                    td #{user.gender}
                     td #{user.nin}
                     td #{user.residence}
+                    td #{user.role}
                     td #{user.license}
                     td #{user.incidences}
                     td #{user.imageupload}
@@ -47,6 +50,4 @@ block content
                             input(type="hidden", placeholder="", name="id", value=user._id)
                             button.btn.btn-dark.btn-block(type="submit") Delete
                             
-    div.form-row
-        div.pull-right
-            a(class='button', href='/') Home
+    

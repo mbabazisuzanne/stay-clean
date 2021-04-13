@@ -7,10 +7,11 @@ const employeeSchema = new mongoose.Schema({
         type: String
         // required: 'Please enter your name'
     },
-    gender: String,
     DoB:{
         type: String,
     },
+    gender: {
+        type: String},
     nin: {
         type: String,
         unique: true
@@ -19,6 +20,7 @@ const employeeSchema = new mongoose.Schema({
     residence: {
         type: String,
     },
+    role:String,
     license: {
         type: String,
         unique: true,
@@ -26,9 +28,7 @@ const employeeSchema = new mongoose.Schema({
     },
     incidences:[{
         type: String
-    }],
-    imageupload: String,
-    role: String
+    }]
 
 })
 

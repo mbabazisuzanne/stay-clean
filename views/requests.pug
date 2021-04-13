@@ -5,32 +5,32 @@ block content
     form.row
             .col
                 label.form-label(for="inputName") Customer's name
-                input.form-control#inputName(type="customer name", placeholder="Please enter your name.")
+                input.form-control#inputName(type="customer name", placeholder="Please enter your name." name="customername")
                 .col-md-6
                 label.form-label(for="inputNIN") National ID Number
-                input.form-control#inputNIN(type="nin", placeholder="NIN")
+                input.form-control#inputNIN(type="nin", placeholder="NIN" name="NIN")
                 .col-12
                 label.form-label(for="inputAddress") Address
-                input.form-control#inputAddress(type="text", placeholder="Enter your address.")
+                input.form-control#inputAddress(type="text", placeholder="Enter your address." name="address")
                 .col-12
-                label.form-label(for="inputPhonenumber") Telephone number
+                label.form-label(for="inputPhonenumber" name="telnumber") Telephone number
                 input.form-control#inputPhonenumber(type="text")
-                label.form-label(for="inputRequest") Service requested for
+                label.form-label(for="inputRequest" name="servicereq") Service requested for
                 select#inputRequest.form-select
                     option(selected)
                     option Sewerage
                     option Garbage
                     option Both
-                label.form-label(for="inputRequest") Type of request
+                label.form-label(for="inputRequest" name="typeOfRequest") Type of request
                 select#inputRequest.form-select
                     option(selected)
                     option Subscription
                     option One time
-                label.form-label(for="inputNumberoftrucks") Number of trucks requested
-                input.form-control#inputNumberoftrucks(type="number", placeholder="Enter number of trucks you need.")
+                label.form-label(for="inputNumberoftrucks" ) Number of trucks requested
+                input.form-control#inputNumberoftrucks(type="number", placeholder="Enter number of trucks you need." name="numberOfTrucks")
                 .col-md-2
                 label.form-label(for="inputRequesttime") Time of request
-                input.form-control#inputRequesttime(type="time")
+                input.form-control#inputRequesttime(type="time" name="timeOfRequest")
                 .form-check
                 input.form-check-input#invalidCheck2(type="checkbox", required)
                 label.form-check-label(for="invalidCheck2").
