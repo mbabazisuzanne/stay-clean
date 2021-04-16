@@ -1,0 +1,52 @@
+extends layout
+block content
+    header.card-header
+        h4.card-title Requests List
+    div.form-row
+        div.col.form-group
+            a(href='/Requests/requests')  Confirm requets
+        div.pull-right
+        a(href='/Requests')  View Request List
+        div.form-row
+        div.pull-right
+            a(class='button', href='/') Home
+    div.form-row
+        div.col.form-group.col-md-12   
+            form.search(action='/Requests')
+                div.form-row
+                    div.col-md-8
+                        input.form-control(name='customername' placeholder="Enter customer's name")
+                    div.col-md-4
+                        input.btn.btn-dark.btn-block(type="Submit")
+    table.table
+        thead.thead-dark
+            tr
+                th Customer's name
+                th National ID Number
+                th Address
+                th Telephone number
+                th Service requested for
+                th Type of request
+                th Number of trucks requested
+                th Time of requests
+            
+        tbody
+            if users.length
+            each user in users
+                tr
+                    td #{user.customername}
+                    td #{user.NIN}
+                    td #{user.address}
+                    td #{user.telnumber}
+                    td #{user.servicereq}
+                    td #{user.typeOfRequest}
+                    td #{user.numberOfTrucks}
+                    td #{user.timeOfRequest}
+                    td 
+                        a(href='/requests/update/'+user._id) Update
+                    td
+                        form(method="post" action='/Requests/delete')
+                            input(type="hidden", placeholder="", name="id", value=user._id)
+                            button.btn.btn-dark.btn-block(type="submit") Delete
+                            
+    

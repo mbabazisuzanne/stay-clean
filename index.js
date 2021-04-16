@@ -16,7 +16,7 @@ const registrationRoutes = require('./routes/registrationRoutes');
 const loginRoutes = require('./routes/loginRoutes');
 const addEmployees = require('./routes/addEmployees');
 const requests = require('./routes/requests');
-const homePage = require('./routes/homePage')
+const landing = require('./routes/landing')
 const Login = require('./models/Login');
 const dashboard = require('./routes/dashboard');
 
@@ -69,7 +69,7 @@ app.use('/register',registrationRoutes);
 app.use('/login',loginRoutes);
 app.use('/addEmployees',addEmployees);
 app.use('/requests',requests);
-app.use('/homePage',homePage);
+app.use('/landing',landing);
 app.use('/dashboard',dashboard);
 
 // cater for undefined routes

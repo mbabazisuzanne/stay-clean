@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const Employee = require('../models/employee')
+const Employee = require('../models/Employee')
 var multer = require('multer');
-var upload = multer({dest:'uploads/'});
+var upload = multer({dest:'public/images'});
 
 //gets employee
-router.get('/addEmployees', (req,res) => {
+router.get('/', (req,res) => {
     res.render('addEmployees',{title:'Create Employee'} )
 })
 
@@ -62,13 +62,12 @@ router.post('/update', async (req, res) => {
         res.status(404).send("Unable to update item in the database");
     }
 })
-
+  
 router.post('/delete', async (req, res) => {
     try {
-        await Employee.findOneAndDelete({_id:req.query.id}, req.body)
-        res.redirect('/addEmployees/employeeList');
+        await Employee.deleteOne({_id:req.body.id});
+        res.redirect('back');
     } catch (err) {
-        console.log(err)
         res.status(404).send("Unable to delete item from the database");
     }
 })

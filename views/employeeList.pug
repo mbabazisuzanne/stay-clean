@@ -1,10 +1,9 @@
 extends layout
-block content
-    header.card-header
-        h4.card-title Employee List
+block content     
     div.form-row
+        h4 Employee List
         div.col.form-group
-            a(href='/employee/addEmployee')  Add New Employee
+            a(href='/addEmployees/addEmployees')  Add New Employee
         div.pull-right
         a(href='/order')  View Order List
         div.form-row
@@ -12,7 +11,7 @@ block content
             a(class='button', href='/') Home
     div.form-row
         div.col.form-group.col-md-12   
-            form.search(action='/employee')
+            form.search(action='/addEmployees')
                 div.form-row
                     div.col-md-8
                         input.form-control(name='role' placeholder="Enter your search term(role) ...")
@@ -46,8 +45,8 @@ block content
                     td 
                         a(href='/addEmployees/update/'+user._id) Update
                     td
-                        form(method="post" action='/employee/delete')
-                            input(type="hidden", placeholder="", name="id", value=user._id)
+                        form(method="post" action='/addEmployees/delete')
+                            input(type="hidden", placeholder="", name="id",value=user_id)
                             button.btn.btn-dark.btn-block(type="submit") Delete
                             
     
