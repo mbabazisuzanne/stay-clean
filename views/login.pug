@@ -7,6 +7,22 @@ html
     link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl", crossorigin="anonymous")
     link(rel="stylesheet", href="/public/css/login.css")
     include navbar
+  style.
+            body{
+                background-image: url(/public/images/wheelie-bin.webp);
+                background-size: cover;
+                background-position:center;
+                font-family: "Poppins", sans-serif;
+            }
+            .card-body{
+                position: ;
+                background: #4f5478;
+                color: lightsteelblue;
+                display:block;
+                border-radius: 10px;
+                padding: 2em;
+                margin: 0 2em; 
+            }
   body
    .row.justify-content-center 
             .col-md-6
@@ -22,8 +38,10 @@ html
                           input.form-control(type="password", placeholder="Password" name="password")
                         .mb-3
                         button.btn.btn-primary(type="submit") Log In
+                        p Don't have an account? 
+                          a(href="/register") Register here
                         div.form-row
                             div.col
                             div.pull-right
-                                a(class='button', href='/dashboard') 
+                                a(class='button', href='/dashboard/dashboard') 
                                 div.col-md-12 © 2021 Mbabazi Suzan, StayClean.

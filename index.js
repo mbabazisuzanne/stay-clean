@@ -5,6 +5,9 @@ const passport = require('passport');
 const dotenv = require('dotenv');
 dotenv.config();
 
+//instantiating express
+const app = express(); 
+
 //require express session
 const expressSession = require('express-session')({
   secret: 'secret',
@@ -19,10 +22,8 @@ const requests = require('./routes/requests');
 const landing = require('./routes/landing')
 const Login = require('./models/Login');
 const dashboard = require('./routes/dashboard');
-
-
-//instantiating express
-const app = express(); 
+const truckRoutes = require('./routes/truckRoutes');
+const Trucks = require('./models/Trucks');
 
 //database connection
 mongoose.connect(process.env.DATABASE, {
@@ -56,10 +57,6 @@ passport.deserializeUser(Login.deserializeUser());
 app.set('view engine', 'pug');
 app.set('views', './views');
 
-// app.use((req, res, next) => {
-//     console.log('a new request received at ' + Date.now());
-//     next();
-//   });
 //middleware for serving static files 
 app.use(express.static('public'));
 app.use('/public/images', express.static(__dirname + '/public/images'));
@@ -71,6 +68,7 @@ app.use('/addEmployees',addEmployees);
 app.use('/requests',requests);
 app.use('/landing',landing);
 app.use('/dashboard',dashboard);
+app.use('/truckReg',truckRoutes)
 
 // cater for undefined routes
 app.get('*', (req, res)=> {

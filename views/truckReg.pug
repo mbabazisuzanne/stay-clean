@@ -1,0 +1,56 @@
+doctype html 
+html 
+  head
+  meta(charset="UTF-8")
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  meta(name="viewport", content="width=device-width,initial-scale=1")
+  link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6", crossorigin="anonymous")
+  title Truck Registration
+  style.
+    
+    body{
+                background-image: url(/public/images/wheelie-bin.webp);
+                background-size: cover;
+                background-position:center;
+                font-family: "Poppins", sans-serif;
+            }
+            .card-body{
+                position: ;
+                background: #4f5478;
+                color: lightsteelblue;
+                display:block;
+                border-radius: 10px;
+                padding: 2em;
+                margin: 0 2em; 
+                max-width: 50%
+            }
+    
+  h1 TRUCK REGISTRATION
+  .container
+    form.row.g-3.needs-validation(novalidate, action="/", method="POST", enctype="multipart/form-data")
+      .col-md-4
+        label.form-label(for="validationCustomUsername") Name of driver
+        .input-group.has-validation
+          input.form-control#validationCustomUsername(type="text", aria-describedby="inputGroupPrepend", name="drivername")
+      .col-md-4
+        label.form-label(for="validationCustomUsername") Truck Reg Number
+        .input-group.has-validation
+          input.form-control#validationCustomUsername(type="text", aria-describedby="inputGroupPrepend", name="regnumber")
+      .col-md-4
+        label.form-label(for="validationCustomUsername") Truck Code Number
+        .input-group.has-validation
+          input.form-control#validationCustomUsername(type="text", aria-describedby="inputGroupPrepend", name="codenumber")
+      .col-md-6
+        label.form-label(for="validationCustomUsername") Current Location
+        .input-group.has-validation
+          input.form-control#validationCustomUsername(type="text", aria-describedby="inputGroupPrepend", name="currentlocation")
+      .col-md-6
+        label.form-label(for="validationCustomUsername") Next Destination
+        .input-group.has-validation
+          input.form-control#validationCustomUsername(type="text", aria-describedby="inputGroupPrepend", name="nextdest")
+      .col-md-6
+        label.form-label(for="validationCustomUsername") Number of conductors
+        .input-group.has-validation
+          input.form-control#validationCustomUsername(type="text", aria-describedby="inputGroupPrepend", name="numberofconductors")
+          button.btn.btn-primary(type="submit", name="btn") Submit.
+  script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js", integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf", crossorigin="anonymous")

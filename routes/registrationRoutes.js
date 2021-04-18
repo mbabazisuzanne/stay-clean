@@ -6,8 +6,8 @@ router.get("/", (req, res) => {
 });
 router.post("/", async (req, res) => {
     try{
-        const registration = new Registration(req.body);
-        await Registration.register(registration, req.body.password, (err)=>{
+        const register = new Registration(req.body);
+        await Registration.register  (register, req.body.password, (err)=>{
             if(err){
                 throw err;
             }

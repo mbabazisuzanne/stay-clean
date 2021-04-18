@@ -1,56 +1,76 @@
 extends layout 
 block content
-    div.container
-    h2 Create Employee
-    form.needs-validation(action="/addEmployees/employeeList" method="POST" enctype="multipart/form-data")
-        div.form-row
-            div.col.form-group
-                label(for="validationCustom01") Full Name
-                input.form-control#validationCustom01(type="text", placeholder="Name" name="username")
-          
-            div.form-row
-                label(for="validationCustom03") Date of birth
-                input.form-control#validationCustom03(type="date", placeholder="D.o.B" name="DoB")
-            .mb-3
-                    label.form-label(for="form-select") Gender
-                    select#form-select.form-select
-                        option Male
-                        option Female
-            div.form-row
-                label(for="validationCustom04") National Identification Number
-                input.form-control#validationCustom04(type="text", placeholder="NIN" name="nin")
-            div.form-row
-                label(for="validationCustom05") Residence
-                input.form-control#validationCustom05(type="text", placeholder="Residence" name="residence")
-            div.form-row
-                label Role 
-                select.form-control(name="role")
-                    option(value="driver")  Driver
-                    option(value="conductor") Conductor
-            div.form-row
-                label(for="validationCustom05") Driving License Number
-                input.form-control#validationCustom05(type="text", placeholder="License Number" name="license")
-            div.col.form-group
-                label(for="validationCustom05") Past Incidences
-            .form-check
-                input#defaultCheck1.form-check-input(type='checkbox' value='')
-                label.form-check-label(for='defaultCheck1')
-                  | Accidents
-            .form-check
-                input#defaultCheck2.form-check-input(type='checkbox' value='')
-                label.form-check-label(for='defaultCheck2')
-                  | Fuel thefts
-            .form-check
-                input#defaultCheck2.form-check-input(type='checkbox' value='')
-                label.form-check-label(for='defaultCheck2')
-                  | Fights     
+        h2 Create Employee
+        style.
+            body{
+                background-image: url(/public/images/wheelie-bin.webp);
+                background-size: cover;
+                background-position:center;
+                font-family: "Poppins", sans-serif;
+            }
+            .card-body{
+                position: ;
+                background: #4f5478;
+                color: lightsteelblue;
+                display:block;
+                border-radius: 10px;
+                padding: 2em;
+                margin: 0 2em; 
+                max-width: 50%
+            }
+        form.needs-validation(action="/addEmployees/employeeList" method="POST" enctype="multipart/form-data")
             div.form-row
                 div.col.form-group
-                    label Upload image
-                    input(type='file' name='imageupload')
+                    label(for="validationCustom01") Full Name
+                    input.form-control#validationCustom01(type="text", placeholder="Name" name="username")
             
-            button.btn.btn-primary(type="submit") Submit form
-            div.form-row
-                    div.pull-right
-                        a(class='button', href='') 
-                                
+                div.form-row
+                    label(for="validationCustom03") Date of birth
+                    input.form-control#validationCustom03(type="date", placeholder="D.o.B" name="DoB")
+                .mb-3
+                        label.form-label(for="form-select") Gender
+                        select#form-select.form-select(name="gender")
+                            option Male
+                            option Female
+                div.form-row
+                    label(for="validationCustom04") National Identification Number
+                    input.form-control#validationCustom04(type="text", placeholder="NIN" name="nin")
+                div.form-row
+                    label(for="validationCustom05") Residence
+                    input.form-control#validationCustom05(type="text", placeholder="Residence" name="residence")
+                div.form-row
+                    label Role 
+                    select.form-control(name="role")
+                        option(value="driver")  Driver
+                        option(value="conductor") Conductor
+                div.form-row
+                    label(for="validationCustom05") Driving License Number
+                    input.form-control#validationCustom05(type="text", placeholder="License Number" name="license")
+                div.col.form-group
+                    label(for="validationCustom05" name="incidences") Past Incidences
+                .form-check
+                    input#defaultCheck1.form-check-input(type='checkbox')
+                    label.form-check-label(for='defaultCheck1')
+                    | Accidents
+                .form-check
+                    input#defaultCheck2.form-check-input(type='checkbox')
+                    label.form-check-label(for='defaultCheck2')
+                    | Fuel thefts
+                .form-check
+                    input#defaultCheck2.form-check-input(type='checkbox')
+                    label.form-check-label(for='defaultCheck2')
+                    | Fights
+                .form-check
+                    input#defaultCheck2.form-check-input(type='checkbox')
+                    label.form-check-label(for='defaultCheck2')
+                    | None     
+                div.form-row
+                    div.col.form-group
+                        label Upload image
+                        input(type='file' name='imageupload')
+                
+                button.btn.btn-primary(type="submit") Submit form
+                div.form-row
+                        div.pull-right
+                            a(class='button', href='') 
+                                    

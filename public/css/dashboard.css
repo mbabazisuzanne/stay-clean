@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
@@ -40,13 +40,13 @@ img {
   background: #4f5478;
   color: lightsteelblue;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   border-radius: 10px;
   padding: 2em;
   margin: 0 2em;
   -webkit-box-shadow: 4px 0px 4px #989ca02d;
-          box-shadow: 4px 0px 4px #989ca02d;
+  box-shadow: 4px 0px 4px #989ca02d;
 }
 
 .container .statistics .card .blob {
@@ -59,7 +59,7 @@ img {
 
 .container .statistics .card .blod {
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .container .statistics .card .number {
@@ -80,8 +80,8 @@ img {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -123,8 +123,8 @@ img {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .heading .settings a img {

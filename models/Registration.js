@@ -5,6 +5,10 @@ const registrationSchema = new mongoose.Schema({
         type: String
         // required: 'Please enter your name'
     },
+    email:{
+        type: String,
+        unique: true
+    }
 
 })
 

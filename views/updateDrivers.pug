@@ -1,5 +1,22 @@
 extends layout
 block content
+        style.
+            body{
+                background-image: url(/public/images/wheelie-bin.webp);
+                background-size: cover;
+                background-position:center;
+                font-family: "Poppins", sans-serif;
+            }
+            .card-body{
+                position: ;
+                background: #4f5478;
+                color: lightsteelblue;
+                display:block;
+                border-radius: 10px;
+                padding: 2em;
+                margin: 0 2em; 
+                max-width: 50%
+            }
     header.card-header
         h4.card-title Welcome
     div.form-row
@@ -15,8 +32,11 @@ block content
                 tr
                     th Full Name
                     td 
-                        input.form-control(value = user.username name ="username")
-               
+                        input.form-control(value = user.username name ="username")              
+                tr
+                    th Date of birth
+                        td 
+                            input.form-control(value = user.DoB name ="DoB")
                 tr
                     th Gender
                         td 
@@ -24,10 +44,6 @@ block content
                             select#gender(name="gender")
                                 option(value="female" selected=user.gender==="female") Female
                                 option(value="male" selected=user.gender==="male") Male
-                tr
-                    th Date of birth
-                        td 
-                            input.form-control(value = user.DoB name ="DoB")
                 tr 
                     th NIN
                         td 
@@ -36,6 +52,10 @@ block content
                     th Residence 
                         td 
                         input.form-control(value = user.residence name="residence")
+                tr 
+                    th Role
+                        td 
+                        input.form-control(value = user.role name="role")
                 tr  
                     th License Number 
                         td 
@@ -43,12 +63,18 @@ block content
                 tr
                     th Past incidences
                     td 
-                        label accidents&nbsp 
-                        input(value= "accidents" type="checkbox" checked =user.past incidence('accidents') name="pastincidence")
-                        label &nbspfights&nbsp
-                        input(value= "fights" type="checkbox" checked =user.past incidence('fights') name="pastincidence")
-                        label &nbspfuel thefts&nbsp
-                        input(value= "fuel thefts" type="checkbox" checked =user.past incidence('fuel thefts') name="pastincidence")
+                        label Accidents&nbsp 
+                        input(value= "accidents" type="checkbox" checked =user.past incidence.includes('accidents') name="pastincidences")
+                        label &nbspFuel thefts&nbsp
+                        input(value= "fuel thefts" type="checkbox" checked =user.past incidence.includes('fuel thefts') name="pastincidences")
+                        label &nbspFights&nbsp
+                        input(value= "fights" type="checkbox" checked =user.past incidence.includes('fights') name="pastincidences")
+                        label &nbspNone&nbsp
+                        input(value= "none" type="checkbox" checked =user.past incidences.includes('None') name="pastincidences")
                 tr
                     td(colspan=2)
                         button.btn.btn-dark.btn-block(type="submit") Update
+                    td 
+                        form(method="post" action="/addEmployee/delete")
+                            input(type="hidden", placeholder="", name="id", value=user._id)
+                            button.btn.btn-dark.btn-block(type="submit") Delete

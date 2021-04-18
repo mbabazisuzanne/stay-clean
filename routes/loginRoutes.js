@@ -12,7 +12,6 @@ router.post('/', passport.authenticate('local', {failureRedirect: '/login'}), (r
     res.redirect('/dashboard');
 });
 
-
 router.post('/',  async(req,res) => {
     try{
       const login = new Login(req.body);
@@ -29,7 +28,5 @@ router.post('/',  async(req,res) => {
       console.log(err);
     }
   })
-
-
 
 module.exports = router;

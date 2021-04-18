@@ -8,7 +8,7 @@ router.get('/requests', (req,res) =>{
 })
 
 //gets customer request list
-router.get('/requestLists', async(req,res)=>{
+router.post('/requestLists', async(req,res)=>{
     try{
         const customerRequests = await Requests.find();
         res.render('requestLists',{users:customerRequests, title:'CustomerRequests'});

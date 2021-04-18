@@ -10,8 +10,7 @@ const employeeSchema = new mongoose.Schema({
     DoB:{
         type: String,
     },
-    gender: {
-        type: String},
+    gender: String,
     nin: {
         type: String,
         unique: true

@@ -1,0 +1,48 @@
+extends layout
+block content
+    header.card-header
+        h4.card-title Requests List
+    div.form-row
+        div.col.form-group
+            a(href='/Requests/requests')  Allocate truck
+        div.pull-right
+        a(href='/Requests')  View Truck List
+        div.form-row
+        div.pull-right
+            a(class='button', href='/') Home
+    div.form-row
+        div.col.form-group.col-md-12   
+            form.search(action='/Requests')
+                div.form-row
+                    div.col-md-8
+                        input.form-control(name='customername' placeholder="Enter customer's name")
+                    div.col-md-4
+                        input.btn.btn-dark.btn-block(type="Submit")
+    table.table
+        thead.thead-dark
+            tr
+                th Name of Driver
+                th Truck Reg Number
+                th Truck Code Number 
+                th Current Location
+                th Next Destination
+                th Number of Conductors
+            
+        tbody
+            if users.length
+            each user in users
+                tr
+                    td #{user.drivername}
+                    td #{user.regnumber}
+                    td #{user.codenumber}
+                    td #{user.currentlocation}
+                    td #{user.nextdest}
+                    td #{user.numberofconductors}
+
+                        a(href='/requests/update/'+user._id) Update
+                    td
+                        form(method="post" action='/Requests/delete')
+                            input(type="hidden", placeholder="", name="id", value=user._id)
+                            button.btn.btn-dark.btn-block(type="submit") Delete
+                            
+    
