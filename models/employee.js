@@ -22,7 +22,7 @@ const employeeSchema = new mongoose.Schema({
     role:String,
     license: {
         type: String,
-        unique: true,
+        unique: true
         // required: 'Please enter your license number'
     },
     incidences:[{

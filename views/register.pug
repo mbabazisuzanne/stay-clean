@@ -3,17 +3,17 @@ block content
   body
     .container
       h2 REGISTER HERE
-      form.justify-content-center(action="/register/", method="POST")
+      form.justify-content-center(action="/register/" method="POST" role="form")
         div.form-row
           .form-group.col-lg-5
-            label Name
+            label User Name
             input.form-control#username(type="username", aria-describedby="usernameHelp", placeholder="Enter your name" name="username" )
           .form-group.col-lg-5
             label(for="email") Email Address
             input.form-control#email(type="email", aria-describedby="emailHelp", placeholder="Enter Your Email" name="email")
           .form-group.col-lg-5
             label(for="exampleInputPassword1") Create Password
-            input.form-control#exampleInputPassword1(type="password", placeholder="Create Password" )
+            input.form-control#exampleInputPassword1(type="password", placeholder="Create Password" name="password")
           .form-group.col-lg-5
             label(for="confirmPassword") Confirm Password
             input.form-control#confirmPassword(type="password", placeholder="Confirm Password")

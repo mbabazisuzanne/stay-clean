@@ -1,29 +1,12 @@
 extends layout
 block content
-        style.
-            body{
-                background-image: url(/public/images/wheelie-bin.webp);
-                background-size: cover;
-                background-position:center;
-                font-family: "Poppins", sans-serif;
-            }
-            .card-body{
-                position: ;
-                background: #4f5478;
-                color: lightsteelblue;
-                display:block;
-                border-radius: 10px;
-                padding: 2em;
-                margin: 0 2em; 
-                max-width: 50%
-            }
     header.card-header
         h4.card-title Welcome
     div.form-row
         div.col.form-group.col-md-12   
-            div.form-row
-                div.col-md-10
-                    p Here is your information #{user.firstname}
+    div.form-row
+        div.col-md-10
+            p Here is your information #{user.firstname}
     div.form-row
         img(src='/'+user.imageupload width="150px" height="170px")
     form(method="post" action="/employee/update?id="+user._id)
@@ -35,30 +18,30 @@ block content
                         input.form-control(value = user.username name ="username")              
                 tr
                     th Date of birth
-                        td 
-                            input.form-control(value = user.DoB name ="DoB")
+                    td 
+                        input.form-control(value = user.DoB name ="DoB")
                 tr
                     th Gender
-                        td 
-                            label(for="validationCustom02") Gender
-                            select#gender(name="gender")
-                                option(value="female" selected=user.gender==="female") Female
-                                option(value="male" selected=user.gender==="male") Male
+                    td 
+                        label(for="validationCustom02") Gender
+                        select#gender(name="gender")
+                            option(value="female" selected=user.gender==="female") Female
+                            option(value="male" selected=user.gender==="male") Male
                 tr 
                     th NIN
-                        td 
+                    td 
                         input.form-control(value = user.nin name ="nin")
                 tr 
                     th Residence 
-                        td 
+                    td 
                         input.form-control(value = user.residence name="residence")
                 tr 
                     th Role
-                        td 
+                    td 
                         input.form-control(value = user.role name="role")
                 tr  
                     th License Number 
-                        td 
+                    td 
                         input.form-control(value = user.nin name ="license")
                 tr
                     th Past incidences
@@ -77,4 +60,4 @@ block content
                     td 
                         form(method="post" action="/addEmployee/delete")
                             input(type="hidden", placeholder="", name="id", value=user._id)
-                            button.btn.btn-dark.btn-block(type="submit") Delete
+                            button.btn.btn-dark.btn-block(type="submit") Back

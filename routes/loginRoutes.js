@@ -3,30 +3,25 @@ const passport = require('passport');
 const router = express.Router();
 const Login = require('../models/Login');
 
-router.get('/login', (req,res) => {
+router.get('/', (req,res) => {
     res.render('login',{title:'LoginPage'} )
 })
 // checks username and password using passport
-router.post('/', passport.authenticate('local', {failureRedirect: '/login'}), (req,res) =>{
-    req.session.user = req.user;
-    res.redirect('/dashboard');
+router.post('/', passport.authenticate('local', {
+  successRedirect: '/dashboard/dashboard',
+  failureRedirect: '/login'}), (req,res) => {
+    // req.session.user = req.user;
 });
-
-router.post('/',  async(req,res) => {
-    try{
-      const login = new Login(req.body);
-      await Login.login(login, req.body.password, (err) =>{
-        if (err)
-        {
-          throw err
-        }
-        res.redirect('/register');
-      })
-    }
-    catch(err){
-      res.status(400).send('Oops! Something went wrong.')
-      console.log(err);
-    }
-  })
+// router.post("/", async (req, res) => {
+//   const login = new Login(req.body);
+//   login.save().then(Hey => {
+//       // res.send('Registered successfully.');
+//       res.redirect('/dashboard/dashboard');
+//   })
+//   .catch(err => {
+//       res.status(400).send("Sorry! Something went wrong.");
+//       console.log(err);
+//   })   
+// });
 
 module.exports = router;

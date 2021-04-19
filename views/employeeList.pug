@@ -45,8 +45,5 @@ block content
                     td 
                         a(href='/addEmployees/update/'+user._id) Update
                     td
-                        form(method="post" action='/addEmployees/delete')
-                            input(type="hidden", placeholder="", name="id",value=user_id)
-                            button.btn.btn-dark.btn-block(type="submit") Delete
-                            
-    
+                        a(href='/addEmployees/delete/'+user._id) Delete   
+                        

@@ -63,10 +63,10 @@ router.post('/update', async (req, res) => {
     }
 })
   
-router.post('/delete', async (req, res) => {
+router.get('/delete/:id', async (req, res) => {
     try {
-        await Employee.deleteOne({_id:req.body.id});
-        res.redirect('back');
+        await Employee.findByIdandDelete({_id:req.body.id});
+        res.redirect('/addEmployees');
     } catch (err) {
         res.status(404).send("Unable to delete item from the database");
     }

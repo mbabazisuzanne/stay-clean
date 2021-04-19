@@ -4,9 +4,9 @@ block content
         h4.card-title Requests List
     div.form-row
         div.col.form-group
-            a(href='/Requests/requests')  Allocate truck
+            a(href='/truckReg/truckList')  Allocate truck
         div.pull-right
-        a(href='/Requests')  View Truck List
+        a(href='/')  View Truck List
         div.form-row
         div.pull-right
             a(class='button', href='/') Home
@@ -39,9 +39,9 @@ block content
                     td #{user.nextdest}
                     td #{user.numberofconductors}
 
-                        a(href='/requests/update/'+user._id) Update
+                        a(href='/truckReg/update/'+user._id) Update
                     td
-                        form(method="post" action='/Requests/delete')
+                        form(method="post" action='/Trucks/delete')
                             input(type="hidden", placeholder="", name="id", value=user._id)
                             button.btn.btn-dark.btn-block(type="submit") Delete
                             
