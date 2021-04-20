@@ -10,12 +10,9 @@ block content
         div.form-row
         div.pull-right
             a(class='button', href='/dashboard/dashboard') Home
-    div.form-row
-        div.col.form-group.col-md-12   
-            form.search(action='/requests')
-                div.form-row
-                    div.col-md-8
-                        input.form-control(name='customername' placeholder="Enter customer's name")
+        div.form-row
+            div.col-md-8
+                input.form-control(name='customername' placeholder="Enter customer's name")
                     div.col-md-4
                         input.btn.btn-dark.btn-block(type="Submit")
     table.table
@@ -28,8 +25,8 @@ block content
                 th Service requested for
                 th Type of request
                 th Number of trucks requested
-                th Time of requests
-            
+                th Time of request
+                th      
         tbody
             if users.length
             each user in users
@@ -45,8 +42,4 @@ block content
                     td 
                         a(href='/requests/requestLists/update/'+user._id) Update
                     td
-                        form(method="post" action='/requests/requestLists/delete')
-                            input(type="hidden", placeholder="", name="id", value=user._id)
-                            button.btn.btn-dark.btn-block(type="submit") Delete
-                            
-    
+                        a(href='/requests/requestLists/delete/'+user._id) Delete   

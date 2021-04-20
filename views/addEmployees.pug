@@ -18,7 +18,7 @@ block content
                 margin: 0 2em; 
                 max-width: 50%
             }
-        form.needs-validation(action="/addEmployees/employeeList" method="POST" enctype="multipart/form-data" name="addEmployees")
+        form.needs-validation(action="/addEmployees/employeeList" method="POST" enctype="multipart/form-data" name="addEmployees" onsubmit="return validation()")
             div.form-row
                 div.col.form-group
                     label(for="validationCustom01") Full Name
@@ -30,6 +30,7 @@ block content
                 .mb-3
                         label.form-label(for="form-select") Gender
                         select#form-select.form-select(name="gender")
+                            option(selected)
                             option Male
                             option Female
                 div.form-row
@@ -39,8 +40,9 @@ block content
                     label(for="validationCustom05") Residence
                     input.form-control#validationCustom05(type="text", placeholder="Residence" name="residence")
                 div.form-row
-                    label Role 
-                    select.form-control(name="role")
+                    label.form-label(for="form-select") Role 
+                    select#form-select.form-select(name="role")
+                        option(selected)
                         option(value="driver")  Driver
                         option(value="conductor") Conductor
                 div.form-row
@@ -72,4 +74,4 @@ block content
                 div.form-row
                         div.pull-right
                             a(class='button', href='') 
-        script(src="./public/js/addEmployees.js")                           
+        script(src="/js/employeeValidation.js")                           

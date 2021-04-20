@@ -1,7 +1,7 @@
 //Dependencies
 const express = require('express');
 const mongoose = require('mongoose');
-
+const bodyparser = require('body-parser')
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -71,7 +71,7 @@ app.use('/dashboard',dashboard);
 app.use('/truckReg',truckRoutes);
 
 //importing models
-require('./models/Employees');
+require('./models/Employee');
 require('./models/Login');
 require('./models/Registration');
 require('./models/Requests');

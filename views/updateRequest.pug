@@ -1,0 +1,60 @@
+extends layout
+block content
+    header.card-header
+        h4.card-title Hello there,
+    div.form-row
+        div.col.form-group.col-md-12   
+    div.form-row
+        div.col-md-10
+            p Here are the customer requests
+    div.form-row
+    form(method="post" action="/requests/requestList/update?id="+user._id)
+        table.table
+            thead.thead-dark
+                tr
+                    th Customer's name
+                    td 
+                        input.form-control(value = user.customername name ="customername")              
+                tr
+                    th National ID Number
+                    td 
+                        input.form-control(value = user.NIN name ="NIN")
+                tr
+                    th Address
+                    td 
+                        input.form-control(value = user.address name ="address")
+                tr
+                    th Telephone number
+                    td 
+                        input.form-control(value = user.telnumber name ="telnumber")
+                tr
+                    th Service requested for
+                    td 
+                        label(for="validationCustom02") Serviced Requested for
+                        select#servicereq(name="servicereq")
+                            option(value="Sewerage" selected=user.servicereq==="Sewerage") Sewerage
+                            option(value="Garbage" selected=user.servicereq==="Garbage") Garbage
+                            option(value="Both" selected=user.servicereq==="Both") Both
+                tr
+                    th Type of request
+                    td 
+                        label(for="validationCustom02") Type of request
+                        select#typeOfRequest(name="typeOfRequest")
+                            option(value="Subscription" selected=user.typeOfRequest==="Subscription") Subscription
+                            option(value="One time" selected=user.typeOfRequest==="One time") One time
+                tr 
+                    th Number of trucks requested
+                    td 
+                        input.form-control(value = user.numberOfTrucks name ="numberOfTrucks")
+                tr 
+                    th Time of request
+                    td 
+                        input.form-control(value = user.timeOfRequest name="timeOfRequest") 
+                tr
+                    td(colspan=2)
+                        button.btn.btn-dark.btn-block(type="submit") Update
+                    td 
+                        form(method="post" action="/requests/requestList/delete")
+                            input(type="hidden", placeholder="", name="id", value=user._id)
+                            button.btn.btn-dark.btn-block(type="submit") Back
+                    td

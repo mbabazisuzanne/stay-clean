@@ -17,11 +17,6 @@ block content
                   padding: 2em;
                   margin: 0 2em; 
               }
-              .img{
-                padding-right: 45px;
-                margin-right: 20px;
-                padding-top: 0px;
-              }
     .container
       h2 ADMIN REGISTRATION
       form.justify-content-center(action="/register/" method="POST" role="form" name="register")
@@ -38,7 +33,6 @@ block content
             input.form-control#confirmPassword(type="password", placeholder="Confirm Password")
           br
           button.btn.btn-primary(type="submit" onclick="Validation()") Submit
-        .row
-          .col.lg-5
-            .img-fluid(src="./public/images/recycle.webp", alt="dustbin")
-        script(src="./public/js/register.js")    
+      .col.lg-5
+      .img(src="../public/images/recycle.webp", alt="dustbin")
+  script(src="./public/js/register.js")    
