@@ -22,10 +22,8 @@ const loginRoutes = require('./routes/loginRoutes');
 const addEmployees = require('./routes/addEmployees');
 const requests = require('./routes/requests');
 const landing = require('./routes/landing')
-const Login = require('./models/Login');
 const dashboard = require('./routes/dashboard');
 const truckRoutes = require('./routes/truckRoutes');
-const Trucks = require('./models/Trucks');
 const Registration = require('./models/Registration');
 
 //database connection
@@ -70,7 +68,14 @@ app.use('/addEmployees',addEmployees);
 app.use('/requests',requests);
 app.use('/landing',landing);
 app.use('/dashboard',dashboard);
-app.use('/truckReg',truckRoutes)
+app.use('/truckReg',truckRoutes);
+
+//importing models
+require('./models/Employees');
+require('./models/Login');
+require('./models/Registration');
+require('./models/Requests');
+require('./models/Trucks');
 
 // cater for undefined routes
 app.get('*', (req, res)=> {
