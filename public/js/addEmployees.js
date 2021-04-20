@@ -1,3 +1,10 @@
+// const fullName = document.addEmployees.username;
+// const birthDate = document.addEmployees.DoB;
+// const sex = document.addEmployees.gender;
+// const driverLicense = document.addEmployees.license;
+// const nationalID = document.addEmployees.nin;
+// const role = document.addEmployees.role;
+
 var userName = document.addEmployees.username;
 
 let employeeName = () =>{

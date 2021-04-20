@@ -15,7 +15,7 @@ block content
             form.search(action='/Requests')
                 div.form-row
                     div.col-md-8
-                        input.form-control(name='customername' placeholder="Enter customer's name")
+                        input.form-control(name='customername' placeholder="Enter truck's unique ID.")
                     div.col-md-4
                         input.btn.btn-dark.btn-block(type="Submit")
     table.table
@@ -27,6 +27,8 @@ block content
                 th Current Location
                 th Next Destination
                 th Number of Conductors
+                th 
+                th
             
         tbody
             if users.length

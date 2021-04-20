@@ -5,7 +5,7 @@ block content
         div.col.form-group
             a(href='/addEmployees')  Add New Employee
         div.pull-right
-        a(href='/order')  View Request List
+        a(href='/requestLists')  View Request List
         div.form-row
         div.pull-right
             a(class='button', href='/dashboard/dashboard') Dashboard
@@ -14,7 +14,7 @@ block content
             form.search(action='/addEmployees')
                 div.form-row
                     div.col-md-8
-                        input.form-control(name='role' placeholder="Enter your search term(role) ...")
+                        input.form-control(name='username' placeholder="Enter employee's name.")
                     div.col-md-4
                         input.btn.btn-dark.btn-block(type="Submit")
     table.table
@@ -28,6 +28,8 @@ block content
                 th Role
                 th License Number
                 th Past Incidences 
+                th 
+                th
             
         tbody
             if users.length
@@ -43,7 +45,7 @@ block content
                     td #{user.incidences}
                     td #{user.imageupload}
                     td 
-                        a(href='/addEmployees/update/'+user._id) Update
+                        a(href='/addEmployees/employeeList/update'+user._id) Update
                     td
-                        a(href='/addEmployees/delete/'+user._id) Delete   
+                        a(href='/addEmployees/employeeList/delete'+user._id) Delete   
                         

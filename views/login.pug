@@ -17,7 +17,7 @@ html
             .card-body{
                 position: ;
                 background: #4f5478;
-                color: lightsteelblue;
+                color: white;
                 display:block;
                 border-radius: 10px;
                 padding: 2em;
@@ -28,8 +28,8 @@ html
             .col-md-6
                 .card-body
                     .container
-                      h2 LOG IN
-                      form(method="POST" action="/login")
+                      h2 ADMIN LOG IN
+                      form(method="POST" action="/login" name="login")
                         .form-group
                           label User name
                           input.form-control(type="username", placeholder="Enter user name" name="username")

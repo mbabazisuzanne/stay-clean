@@ -14,7 +14,11 @@ router.get('/employeeList', async (req, res) => {
     try{
 //find all data in database 
         const employeeDetails = await Employee.find();
-        res.render('employeeList', {users:employeeDetails, title: 'EmployeeList'});
+        if(req.query.username){
+            employeeDetails = await Employee.find({username:req.query.username})
+        }
+        res.render('employeeList', {users:employeeDetails, 
+        title: 'EmployeeList'});
        
     }catch(err){
         res.send('Failed to retireve Employee Details')
@@ -63,10 +67,10 @@ router.post('/update', async (req, res) => {
     }
 })
   
-router.get('/delete/:id', async (req, res) => {
+router.post('/delete/:id', async (req, res) => {
     try {
         await Employee.findByIdandDelete({_id:req.body.id});
-        res.redirect('/addEmployees');
+        res.redirect('/addEmployees/employeeList');
     } catch (err) {
         res.status(404).send("Unable to delete item from the database");
     }

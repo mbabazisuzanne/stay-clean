@@ -6,10 +6,9 @@ const loginSchema = new mongoose.Schema({
       type: String
       // required: 'Please enter your name'
       },
-    password: {
-      type: String
-  }
+      password: {
+        type: String
+      }
   });
 
-loginSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model('Login', loginSchema);

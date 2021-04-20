@@ -3,7 +3,7 @@ const router = express.Router();
 const Requests = require('../models/Requests');
 
 //gets customer requests 
-router.get('/requests', (req,res) =>{
+router.get('/', (req,res) =>{
     res.render('requests',{title:'Customer Requests'})
 })
 

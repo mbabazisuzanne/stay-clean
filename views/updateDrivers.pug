@@ -9,7 +9,7 @@ block content
             p Here is your information #{user.firstname}
     div.form-row
         img(src='/'+user.imageupload width="150px" height="170px")
-    form(method="post" action="/employee/update?id="+user._id)
+    form(method="post" action="/addEmployees/update?id="+user._id)
         table.table
             thead.thead-dark
                 tr
@@ -58,6 +58,6 @@ block content
                     td(colspan=2)
                         button.btn.btn-dark.btn-block(type="submit") Update
                     td 
-                        form(method="post" action="/addEmployee/delete")
+                        form(method="post" action="/addEmployees/employeeList/delete")
                             input(type="hidden", placeholder="", name="id", value=user._id)
                             button.btn.btn-dark.btn-block(type="submit") Back

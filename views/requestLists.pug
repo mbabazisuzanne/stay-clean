@@ -4,15 +4,15 @@ block content
         h4.card-title Requests List
     div.form-row
         div.col.form-group
-            a(href='/Requests/requests')  Confirm requets
+            a(href='/requests')  Confirm requets
         div.pull-right
         a(href='/Requests')  View Request List
         div.form-row
         div.pull-right
-            a(class='button', href='/') Home
+            a(class='button', href='/dashboard/dashboard') Home
     div.form-row
         div.col.form-group.col-md-12   
-            form.search(action='/Requests')
+            form.search(action='/requests')
                 div.form-row
                     div.col-md-8
                         input.form-control(name='customername' placeholder="Enter customer's name")
@@ -43,9 +43,9 @@ block content
                     td #{user.numberOfTrucks}
                     td #{user.timeOfRequest}
                     td 
-                        a(href='/requests/update/'+user._id) Update
+                        a(href='/requests/requestLists/update/'+user._id) Update
                     td
-                        form(method="post" action='/Requests/delete')
+                        form(method="post" action='/requests/requestLists/delete')
                             input(type="hidden", placeholder="", name="id", value=user._id)
                             button.btn.btn-dark.btn-block(type="submit") Delete
                             

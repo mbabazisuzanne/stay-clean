@@ -10,24 +10,28 @@ const employeeSchema = new mongoose.Schema({
     DoB:{
         type: String,
     },
-    gender: String,
+    gender: {
+        type: String,
+    },
     nin: {
         type: String,
-        unique: true
+        //unique: true
         // required: 'Please enter your  NIN'
     },
     residence: {
         type: String,
     },
-    role:String,
+    role:{
+        type: String
+    },
     license: {
         type: String,
-        unique: true
+        // unique: true
         // required: 'Please enter your license number'
     },
     incidences:[{
-        type: String
-    }]
+        type: String,
+    }],
 
 })
 

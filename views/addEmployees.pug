@@ -18,7 +18,7 @@ block content
                 margin: 0 2em; 
                 max-width: 50%
             }
-        form.needs-validation(action="/addEmployees/employeeList" method="POST" enctype="multipart/form-data")
+        form.needs-validation(action="/addEmployees/employeeList" method="POST" enctype="multipart/form-data" name="addEmployees")
             div.form-row
                 div.col.form-group
                     label(for="validationCustom01") Full Name
@@ -67,10 +67,9 @@ block content
                 div.form-row
                     div.col.form-group
                         label Upload image
-                        input(type='file' name='imageupload')
-                
+                        input(type='file' name='imageupload')               
                 button.btn.btn-primary(type="submit") Submit form
                 div.form-row
                         div.pull-right
                             a(class='button', href='') 
-                                    
+        script(src="./public/js/addEmployees.js")                           

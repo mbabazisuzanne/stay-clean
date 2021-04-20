@@ -1,12 +1,9 @@
 //Dependencies
 const express = require('express');
 const mongoose = require('mongoose');
-const passport = require('passport');
+
 const dotenv = require('dotenv');
 dotenv.config();
-
-//instantiating express
-const app = express(); 
 
 //require express session
 const expressSession = require('express-session')({
@@ -14,6 +11,11 @@ const expressSession = require('express-session')({
   resave: false,
   saveUninitialized: false
 });
+
+const passport = require('passport');
+
+//instantiating express
+const app = express(); 
 
 const registrationRoutes = require('./routes/registrationRoutes'); 
 const loginRoutes = require('./routes/loginRoutes');
@@ -24,6 +26,7 @@ const Login = require('./models/Login');
 const dashboard = require('./routes/dashboard');
 const truckRoutes = require('./routes/truckRoutes');
 const Trucks = require('./models/Trucks');
+const Registration = require('./models/Registration');
 
 //database connection
 mongoose.connect(process.env.DATABASE, {
@@ -32,7 +35,6 @@ mongoose.connect(process.env.DATABASE, {
     useCreateIndex: true,
     useFindAndModify: false
   });
-  
   mongoose.connection
     .on('open', () => {
       console.log('Mongoose connection open');
@@ -49,9 +51,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //passport configurations
-passport.use(Login.createStrategy());
-passport.serializeUser(Login.serializeUser());
-passport.deserializeUser(Login.deserializeUser());
+passport.use(Registration.createStrategy());
+passport.serializeUser(Registration.serializeUser());
+passport.deserializeUser(Registration.deserializeUser());
 
 //configurations
 app.set('view engine', 'pug');
