@@ -19,7 +19,7 @@ block content
               }
     .container
       h2 ADMIN REGISTRATION
-      form.justify-content-center(action="/register/" method="POST" role="form" name="register")
+      form.justify-content-center(action="/register/" method="POST" role="form" name="register" onsubmit="return validation()")
         div.form-row
         .col-md-6
           .form-group
@@ -33,6 +33,7 @@ block content
             input.form-control#confirmPassword(type="password", placeholder="Confirm Password")
           br
           button.btn.btn-primary(type="submit" onclick="Validation()") Submit
-      .col.lg-5
-      .img(src="../public/images/recycle.webp", alt="dustbin")
-  script(src="./public/js/register.js")    
+          p Already have an account? 
+                          a(href="/login") Log In
+      script(src="/js/register.js")  
+        

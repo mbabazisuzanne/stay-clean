@@ -13,11 +13,6 @@ const employeeAge = 18;
 //Date declaration
 const date = Date.now();
 
-//Regular expressions to be used for name and phone number.
-const usernameRegex = /^[A-Z a-z]+$/;
-const contactRegex = /^[0-9a-zA-Z+]+$/;
-
-
 //Minimum values for validating name, NIN, max words and contact.
 const minName = 2;
 const minNin = 13;
@@ -43,12 +38,7 @@ if (fullName.value == "") {
     alert("Please enter a valid name.");
     return false;
   }
-  if (!fullName.value.match(firstnameRegex)) {
-    fullName.focus();
-    fullName.style.border = "2px solid red";
-    // alert("Please begin name with STC and any number.");
-    return false;
-  }
+
 //validation for date of birth.
   if (birthDate.value == "") {
   birthDate.focus();

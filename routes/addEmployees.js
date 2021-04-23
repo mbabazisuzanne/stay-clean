@@ -46,7 +46,7 @@ router.get('/employeeList', async (req, res) => {
         res.send('Failed to retireve Employee Details')
     }
 });
-
+//Route for updating employees in the list.
 router.get('/update/:id', async (req, res) => {
     try {
         const updateEmp = await Employee.findOne({ _id: req.params.id })
@@ -65,7 +65,7 @@ router.post('/update', async (req, res) => {
         res.status(404).send("Unable to update item in the database");
     }
 })
-  
+ //Route for deleting an employee from the employee list. 
 router.post('/delete/:id', async (req, res) => {
     try {
         await Employee.findByIdAndDelete({_id:req.body.id});
